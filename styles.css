@@ -1,0 +1,112 @@
+/* Basic CSS for styling the navbar, footer, and download button */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.company-logo {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.menu-icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-icon:hover {
+    background-color: #555; /* Change the background color on hover */
+}
+
+.main-content {
+    text-align: center;
+    padding: 50px;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    border: none; /* Remove the default button border */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #111;
+    cursor: pointer;
+}
+
+/* Styles for the hidden animation element */
+.download-animation {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ff5733; /* Adjust the color as needed */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none; /* Prevent the animation from blocking clicks */
+    transition: opacity 0.3s ease;
+}
+
+/* Hidden state */
+.download-animation.hidden {
+    opacity: 0;
+}
+
+/* Visible state */
+.download-animation.visible {
+    opacity: 1;
+}
+
+/* Define the animation */
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+}
+
+/* Apply the animation to the element */
+.download-animation.bouncing {
+    animation: bounce 1s infinite;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
